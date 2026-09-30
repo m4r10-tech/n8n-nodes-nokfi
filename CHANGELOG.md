@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.2
+
+- Node categories: Finance & Accounting and Analytics (supported by n8n).
+
 ## 0.1.1
 
 - First release published from GitHub Actions with npm provenance.

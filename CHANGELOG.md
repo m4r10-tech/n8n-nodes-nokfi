@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.3.0
+
+- **Issue invoices** from n8n (Invoice › Issue): Nokfi numbers them without gaps, computes VAT per rate, IRPF withholding and the equivalence surcharge, adds them to your books and creates the VERI*FACTU record. Customer from your address book, typed in, or none (simplified invoice).
+- Invoice › **Rectify**, **Cancel**, **Set Status** (rejected/accepted, paid/unpaid), **Get**, **Get Many** and **Download** (PDF, UBL 2.5, Facturae 3.2.2, Factur-X or CII as binary data).
+- Optional **Idempotency Key** (e.g. the order ID) so the same order never produces two invoices, even across executions.
+- With a test key (`nk_test_…`) invoices are test documents (TEST- numbering) that never reach your books or the tax agency.
+- Nokfi Trigger: new events Invoice Issued, Cancelled, Paid, Unpaid, Rejected, Rejection Undone, and VERI*FACTU Record Accepted / Rejected.
+- Invoice › Extract reads **e-invoices** exactly, without AI and without using quota: Facturae 3.2.x (.xml/.xsig), UBL 2.x, CII and Factur-X/ZUGFeRD PDFs (`source_format` in the output, `ai_used: false`).
+
 ## 0.2.0
 
 - New **Nokfi Trigger** node: starts a workflow on Analysis Completed, Job Completed, Job Failed, Quota Threshold (80 % / 100 %) or Fiscal Deadline (7 days and 1 day before). Registers and deletes its webhook automatically and verifies the `Nokfi-Signature` HMAC.

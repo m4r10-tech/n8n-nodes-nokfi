@@ -1,7 +1,12 @@
 # Changelog
 
+## Unreleased (API, no node change)
+
+- AI analyses are now called **credits** (1 credit = 1 AI analysis or invoice reading). Usage › Get also returns `daily_credits`, `daily_credits_used`, `daily_credits_left`, `pack_credits` and `credits_available`; `daily_quota` and `used_today` are kept. Credit packs (one-off, never expire) are used once the daily credits run out and share the balance with the web app.
+
 ## 0.4.0
 
+- Analysis › **Rename** (new title, 1–120 characters) and **Delete** (the analysis and its action plan; the credit is not returned). With a test key they return "not found" and never touch real data.
 - New **Customer** resource: Get Many (list or search your address book) and Create.
 - New **Job** resource: Get the status and result of a background job (*Run in Background*).
 - New **Tax › Get Quarter Summary**: VAT (303) and IRPF (130) of a quarter from your Nokfi ledger.
